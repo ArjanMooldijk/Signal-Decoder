@@ -422,12 +422,12 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
             dunkelZwergsignal(index);
             if ( OutputAddr & 0x1 ) {
               setZwergsignalF(index, 1);
-              lastBild[signalChannel[index]] = 1;
+              lastBild[index] = 1;
               break;
             }
             else {
               setZwergsignalF(index, 0);
-              lastBild[signalChannel[index]] = 0;
+              lastBild[index] = 0;
               break;
             }
 
@@ -437,19 +437,19 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
             dunkelZwergsignal(index);
             if ( OutputAddr & 0x1 ) {
               setZwergsignalF(index, 2);
-              lastBild[signalChannel[index]] = 2;
+              lastBild[index-1] = 2;
               break;
             }
             else {
-              if (lastBild[signalChannel[index]] == 0) {
+              if (lastBild[index-1] == 0) {
                 setZwergsignalF(index, 3);
-                lastBild[signalChannel[index]] = 3;
+                lastBild[index-1] = 1;
                 break;
               }
               else {
-                if (lastBild[signalChannel[index]] == 2) {
+                if (lastBild[index-1] == 2) {
                   setZwergsignalF(index, 1);
-                  lastBild[signalChannel[index]] = 1;
+                  lastBild[index-1] = 1;
                   break;
                 }
                 else {
@@ -463,7 +463,7 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
           case ZwergAdr1nF:
             if ( OutputAddr & 0x1 ) {
               setZwergsignalnF(index, 2);
-              delay(500);
+              delay(200);
               setZwergsignalnF(index, 1);
               break;
             }
@@ -1001,6 +1001,19 @@ void setZwergsignalF(byte pntr, byte Fb){
        tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
        break;
     default:
+    case 3: // van Fb0  via Fb2 naar Fb1
+       endMillis = startMillis + fadeConst * 2;      
+       tlc_addFade(signalChannel[pntr]+1, 0, dimConst[signalChannel[pntr]+1], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       startMillis = endMillis + darkDelay;
+       endMillis = startMillis + fadeConst;
+       tlc_addFade(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1], 0, startMillis, endMillis);
+       tlc_addFade(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2], 0, startMillis, endMillis);
+       startMillis = endMillis + darkDelay; 
+       endMillis = startMillis + fadeConst * 2;      
+       tlc_addFade(signalChannel[pntr]+0, 0, dimConst[signalChannel[pntr]+0], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       break;
        break;
        }
 }
