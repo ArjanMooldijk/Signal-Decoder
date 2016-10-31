@@ -12,30 +12,32 @@
 #define VorAdr1F      1 // Vorsignal addr 1,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
 #define VorAdr2F      2 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
 #define VorAdr3F      3 // Vorsignal addr 3,  Fade    Voorsignaal, derde adres  beeld Fb5
-#define VorAdr1nF     4 // Vorsignal addr 1,  no Fade Voorsignaal, eerste adres  beelden Warnung & Fb1
-#define VorAdr2nF     5 // Vorsignal addr 2,  no Fade Voorsignaal, tweede adres  beelden Fb2 & Fb3
-#define VorAdr3nF     6 // Vorsignal addr 3,  no Fade Voorsignaal, derde adres  beeld Fb5
+#define VorAdr2Dkl    4 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres donker schakelen
+#define VorAdr1nF     5 // Vorsignal addr 1,  no Fade Voorsignaal, eerste adres  beelden Warnung & Fb1
+#define VorAdr2nF     6 // Vorsignal addr 2,  no Fade Voorsignaal, tweede adres  beelden Fb2 & Fb3
+#define VorAdr3nF     7 // Vorsignal addr 3,  no Fade Voorsignaal, derde adres  beeld Fb5
 //
-#define ZwergAdr1F    7 // Zwerg addr 1,      Fade    Dwersignaal, eerste adres  beelden Halt & Fahrt
-#define ZwergAdr2F    8 // Zwerg addr 2,      Fade    Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
-#define ZwergAdr1nF   9 // Zwerg addr 1,      no Fade Dwersignaal, eerste adres  beelden Halt & Fahrt
-#define ZwergAdr2nF  10 // Zwerg addr 2,      no Fade Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
+#define ZwergAdr1F    8 // Zwerg addr 1,      Fade    Dwersignaal, eerste adres  beelden Halt & Fahrt
+#define ZwergAdr2F    9 // Zwerg addr 2,      Fade    Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
+#define ZwergAdr1nF  10 // Zwerg addr 1,      no Fade Dwersignaal, eerste adres  beelden Halt & Fahrt
+#define ZwergAdr2nF  11 // Zwerg addr 2,      no Fade Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
 //
-#define SIMHaupt     11 // SIM Haupt,         SIM hoofdsein
-#define SIMVor       12 // SIM Vor,           SIM voorsein
+#define SIMHaupt     12 // SIM Haupt,         SIM hoofdsein
+#define SIMVor       13 // SIM Vor,           SIM voorsein
 //
-#define HauptAdr1F   13 // Haupt addr 1,      Fade    Hoofdsignaal eerste adres beelden Fb0 & Fb1
-#define HptAdr2Fb2F  14 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
-#define HptAdr2Fb3F  15 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
-#define HauptAdr2F   16 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
-#define HptAdr3Fb6F  17 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
-#define HauptAdr3F   18 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
-#define HauptAdr1nF  19 // Haupt addr 1,      no Fade Hoofdsignaal eerste adres beelden Fb0 & Fb1
-#define HptAdr2Fb2nF 20 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
-#define HptAdr2Fb3nF 21 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
-#define HauptAdr2nF  22 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
-#define HptAdr3Fb6nF 23 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
-#define HauptAdr3nF  24 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
+#define HauptAdr1F   14 // Haupt addr 1,      Fade    Hoofdsignaal eerste adres beelden Fb0 & Fb1
+#define HptAdr2Fb2F  15 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
+#define HptAdr2Fb3F  16 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
+#define HauptAdr2F   17 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
+#define HptAdr3Fb6F  18 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
+#define HauptAdr3F   19 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
+#define HauptAdr1nF  20 // Haupt addr 1,      no Fade Hoofdsignaal eerste adres beelden Fb0 & Fb1
+#define HptAdr2Fb2nF 21 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
+#define HptAdr2Fb3nF 22 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
+#define HauptAdr2nF  23 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
+#define HptAdr3Fb6nF 24 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
+#define HauptAdr3nF  25 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // AAN TE PASSEN CONSTANTEN ///////////////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +96,7 @@ void setup() {
     for (byte x = 0; x < anZahl; x ++) {   // set all default Halt and register starting pin per signal
       switch (signalType[x]) {
         case VorAdr1F:
-          if (signalType[x+1]==VorAdr2F) {
+          if (signalType[x+1]==VorAdr2F || signalType[x+1]==VorAdr2Dkl) {
             if (signalType[x+2]==VorAdr3F) {
               signalLeds[x] = 5;
               signalLeds[x+1] = 5;
@@ -381,6 +383,12 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
             else {
               setFb2VorsignalF(index);
               break;
+
+//Vorsignal Addr 2 Dunkel
+          case VorAdr2Dkl:
+            startMillis = millis() + 1;
+            dunkelVorsignal(index);
+            break;
             }
 
 //Vorsignal Addr 3 Fb5 Fade
