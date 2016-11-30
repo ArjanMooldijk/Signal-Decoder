@@ -12,30 +12,31 @@
 #define VorAdr1F      1 // Vorsignal addr 1,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
 #define VorAdr2F      2 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
 #define VorAdr3F      3 // Vorsignal addr 3,  Fade    Voorsignaal, derde adres  beeld Fb5
-#define VorAdr1nF     4 // Vorsignal addr 1,  no Fade Voorsignaal, eerste adres  beelden Warnung & Fb1
-#define VorAdr2nF     5 // Vorsignal addr 2,  no Fade Voorsignaal, tweede adres  beelden Fb2 & Fb3
-#define VorAdr3nF     6 // Vorsignal addr 3,  no Fade Voorsignaal, derde adres  beeld Fb5
+#define VorAdr2Dkl    4 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres donker schakelen
+#define VorAdr1nF     5 // Vorsignal addr 1,  no Fade Voorsignaal, eerste adres  beelden Warnung & Fb1
+#define VorAdr2nF     6 // Vorsignal addr 2,  no Fade Voorsignaal, tweede adres  beelden Fb2 & Fb3
+#define VorAdr3nF     7 // Vorsignal addr 3,  no Fade Voorsignaal, derde adres  beeld Fb5
 //
-#define ZwergAdr1F    7 // Zwerg addr 1,      Fade    Dwersignaal, eerste adres  beelden Halt & Fahrt
-#define ZwergAdr2F    8 // Zwerg addr 2,      Fade    Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
-#define ZwergAdr1nF   9 // Zwerg addr 1,      no Fade Dwersignaal, eerste adres  beelden Halt & Fahrt
-#define ZwergAdr2nF  10 // Zwerg addr 2,      no Fade Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
+#define ZwergAdr1F    8 // Zwerg addr 1,      Fade    Dwersignaal, eerste adres  beelden Halt & Fahrt
+#define ZwergAdr2F    9 // Zwerg addr 2,      Fade    Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
+#define ZwergAdr1nF  10 // Zwerg addr 1,      no Fade Dwersignaal, eerste adres  beelden Halt & Fahrt
+#define ZwergAdr2nF  11 // Zwerg addr 2,      no Fade Dwersignaal, tweede adres  beeld Fahrt mit Vorsicht
 //
-#define SIMHaupt     11 // SIM Haupt,         SIM hoofdsein
-#define SIMVor       12 // SIM Vor,           SIM voorsein
+#define SIMHaupt     12 // SIM Haupt,         SIM hoofdsein
+#define SIMVor       13 // SIM Vor,           SIM voorsein
 //
-#define HauptAdr1F   13 // Haupt addr 1,      Fade    Hoofdsignaal eerste adres beelden Fb0 & Fb1
-#define HptAdr2Fb2F  14 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
-#define HptAdr2Fb3F  15 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
-#define HauptAdr2F   16 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
-#define HptAdr3Fb6F  17 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
-#define HauptAdr3F   18 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
-#define HauptAdr1nF  19 // Haupt addr 1,      no Fade Hoofdsignaal eerste adres beelden Fb0 & Fb1
-#define HptAdr2Fb2nF 20 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
-#define HptAdr2Fb3nF 21 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
-#define HauptAdr2nF  22 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
-#define HptAdr3Fb6nF 23 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
-#define HauptAdr3nF  24 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
+#define HauptAdr1F   14 // Haupt addr 1,      Fade    Hoofdsignaal eerste adres beelden Fb0 & Fb1
+#define HptAdr2Fb2F  15 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
+#define HptAdr2Fb3F  16 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
+#define HauptAdr2F   17 // Haupt addr 2,      Fade    Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
+#define HptAdr3Fb6F  18 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
+#define HauptAdr3F   19 // Haupt addr 3,      Fade    Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
+#define HauptAdr1nF  20 // Haupt addr 1,      no Fade Hoofdsignaal eerste adres beelden Fb0 & Fb1
+#define HptAdr2Fb2nF 21 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 (3-licht sein)
+#define HptAdr2Fb3nF 22 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb3 (3-licht sein)
+#define HauptAdr2nF  23 // Haupt addr 2,      no Fade Hoofdsignaal tweede adres beeld Fb2 & Fb3 (4/5/6-licht sein)
+#define HptAdr3Fb6nF 24 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb6 (5-licht sein)
+#define HauptAdr3nF  25 // Haupt addr 3,      no Fade Hoofdsignaal derde adres beeld Fb5 & Fb6 (6-licht sein)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // AAN TE PASSEN CONSTANTEN ///////////////////////////////////////////////////////////////////////////////////////////
@@ -92,7 +93,7 @@ void setup() {
     for (byte x = 0; x < anZahl; x ++) {   // set all default Halt and register starting pin per signal
       switch (signalType[x]) {
         case VorAdr1F:
-          if (signalType[x+1]==VorAdr2F) {
+          if (signalType[x+1]==VorAdr2F || signalType[x+1]==VorAdr2Dkl) {
             if (signalType[x+2]==VorAdr3F) {
               signalLeds[x] = 5;
               signalLeds[x+1] = 5;
@@ -125,7 +126,7 @@ void setup() {
           break;
 
         case VorAdr1nF:
-          if (signalType[x+1]==VorAdr2nF) {
+          if (signalType[x+1]==VorAdr2nF || signalType[x+1]==VorAdr2Dkl) {
             if (signalType[x+2]==VorAdr3nF) {
               signalLeds[x] = 5;
               signalLeds[x+1] = 5;
@@ -365,13 +366,11 @@ void loop() {
 //Simulatie van het DCC programma dat de pakketen met opdrachten uit de digitale stroom haalt
 //
 void simulateDCC( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, uint8_t State ){
-
   for ( byte index = 0; index < anZahl; index++ ) {
     if (Addr == signalAdr[index]) {                     // ist eigene Adresse
       if ((Addr != LastAddr) || ( LastTime < millis() - 200)) {
-        /*Serial.print ("Adres: ");
-        Serial.println (Addr); */
         switch (signalType[index]) {
+          
 //Vorsignal Addr 1 Fb1 & Fb0 Fade
           case VorAdr1F :
             startMillis = millis() + 1;
@@ -395,6 +394,12 @@ void simulateDCC( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, uint8_t
             else {
               setFb2VorsignalF(index);
               break;
+
+//Vorsignal Addr 2 Dunkel
+          case VorAdr2Dkl:
+            startMillis = millis() + 1;
+            dunkelVorsignal(index);
+            break;
             }
 
 //Vorsignal Addr 3 Fb5 Fade
@@ -476,19 +481,38 @@ void simulateDCC( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, uint8_t
 //Zwergsignal Addr 1 Fahrt & Halt noFade
           case ZwergAdr1nF:
             if ( OutputAddr & 0x1 ) {
-              setZwergsignalnF(index, 2);
-              delay(200);
-              setZwergsignalnF(index, 1);
+              setZwergsignalnF(index, 1);              
+              lastBild[index] = 1;
               break;
             }
             else {
-              setZwergsignalnF(index, 0);
+              setZwergsignalnF(index, 0);              
+              lastBild[index] = 1;
               break;
             }
 
 //Zwergsignal Addr 2 Fahrt mit Vorsicht noFade
           case ZwergAdr2nF:
-            setZwergsignalnF(index, 2);
+            startMillis = millis() + 1;
+            if ( OutputAddr & 0x1 ) {
+              setZwergsignalnF(index, 2);
+              lastBild[index-1] = 2;
+              break;
+            }
+            else {
+              if (lastBild[index-1] == 0) {
+                setZwergsignalnF(index, 3);
+                lastBild[index-1] = 1;
+                break;
+              }
+              else {
+                if (lastBild[index-1] == 2) {
+                  setZwergsignalnF(index, 1);
+                  lastBild[index-1] = 1;
+                  break;
+                }
+              }
+            }          
             break;
 
 //SIMhauptsignal An & Aus
@@ -1054,6 +1078,19 @@ void setZwergsignalnF(byte pntr, byte Fb){
        Tlc.set(signalChannel[pntr]+0, 0);
        Tlc.set(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1]);
        Tlc.set(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2]);
+       break;
+    case 3: // van Fb0  via Fb2 naar Fb1
+       endMillis = startMillis + 1;      
+       tlc_addFade(signalChannel[pntr]+1, 0, dimConst[signalChannel[pntr]+1], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       startMillis = endMillis + darkDelay;
+       endMillis = startMillis + 1;
+       tlc_addFade(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1], 0, startMillis, endMillis);
+       tlc_addFade(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2], 0, startMillis, endMillis);
+       startMillis = endMillis + darkDelay; 
+       endMillis = startMillis + 1;      
+       tlc_addFade(signalChannel[pntr]+0, 0, dimConst[signalChannel[pntr]+0], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
        break;
     default:
        break;

@@ -122,18 +122,19 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
     if (Addr == signalAdr[index]) {                     // ist eigene Adresse
       if ((Addr != LastAddr) || ( LastTime < millis() - 200)) {
         switch (signalType[index]) {
+
 //Zwergsignal Addr 1 Fahrt & Halt Fade
           case ZwergAdr1F:
             startMillis = millis() + 1;
             dunkelZwergsignal(index);
             if ( OutputAddr & 0x1 ) {
               setZwergsignalF(index, 1);
-              lastBild[signalChannel[index]] = 1;
+              lastBild[index] = 1;
               break;
             }
             else {
               setZwergsignalF(index, 0);
-              lastBild[signalChannel[index]] = 0;
+              lastBild[index] = 0;
               break;
             }
 
@@ -143,19 +144,19 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
             dunkelZwergsignal(index);
             if ( OutputAddr & 0x1 ) {
               setZwergsignalF(index, 2);
-              lastBild[signalChannel[index]] = 2;
+              lastBild[index-1] = 2;
               break;
             }
             else {
-              if (lastBild[signalChannel[index]] == 0) {
+              if (lastBild[index-1] == 0) {
                 setZwergsignalF(index, 3);
-                lastBild[signalChannel[index]] = 3;
+                lastBild[index-1] = 1;
                 break;
               }
               else {
-                if (lastBild[signalChannel[index]] == 2) {
+                if (lastBild[index-1] == 2) {
                   setZwergsignalF(index, 1);
-                  lastBild[signalChannel[index]] = 1;
+                  lastBild[index-1] = 1;
                   break;
                 }
                 else {
@@ -168,19 +169,38 @@ void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, u
 //Zwergsignal Addr 1 Fahrt & Halt noFade
           case ZwergAdr1nF:
             if ( OutputAddr & 0x1 ) {
-              setZwergsignalnF(index, 2);
-              delay(500);
-              setZwergsignalnF(index, 1);
+              setZwergsignalnF(index, 1);              
+              lastBild[index] = 1;
               break;
             }
             else {
-              setZwergsignalnF(index, 0);
+              setZwergsignalnF(index, 0);              
+              lastBild[index] = 1;
               break;
             }
 
 //Zwergsignal Addr 2 Fahrt mit Vorsicht noFade
           case ZwergAdr2nF:
-            setZwergsignalnF(index, 2);
+            startMillis = millis() + 1;
+            if ( OutputAddr & 0x1 ) {
+              setZwergsignalnF(index, 2);
+              lastBild[index-1] = 2;
+              break;
+            }
+            else {
+              if (lastBild[index-1] == 0) {
+                setZwergsignalnF(index, 3);
+                lastBild[index-1] = 1;
+                break;
+              }
+              else {
+                if (lastBild[index-1] == 2) {
+                  setZwergsignalnF(index, 1);
+                  lastBild[index-1] = 1;
+                  break;
+                }
+              }
+            }          
             break;
           default:
             break;
@@ -251,6 +271,19 @@ void setZwergsignalF(byte pntr, byte Fb){
        tlc_addFade(signalChannel[pntr]+1, 0, dimConst[signalChannel[pntr]+1], startMillis, endMillis);
        tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
        break;
+    case 3: // van Fb0  via Fb2 naar Fb1
+       endMillis = startMillis + fadeConst * 2;      
+       tlc_addFade(signalChannel[pntr]+1, 0, dimConst[signalChannel[pntr]+1], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       startMillis = endMillis + darkDelay;
+       endMillis = startMillis + fadeConst;
+       tlc_addFade(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1], 0, startMillis, endMillis);
+       tlc_addFade(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2], 0, startMillis, endMillis);
+       startMillis = endMillis + darkDelay; 
+       endMillis = startMillis + fadeConst * 2;      
+       tlc_addFade(signalChannel[pntr]+0, 0, dimConst[signalChannel[pntr]+0], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       break;
     default:
        break;
        }
@@ -279,9 +312,21 @@ void setZwergsignalnF(byte pntr, byte Fb){
        Tlc.set(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1]);
        Tlc.set(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2]);
        break;
+    case 3: // van Fb0  via Fb2 naar Fb1
+       endMillis = startMillis + 1;      
+       tlc_addFade(signalChannel[pntr]+1, 0, dimConst[signalChannel[pntr]+1], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       startMillis = endMillis + darkDelay;
+       endMillis = startMillis + 1;
+       tlc_addFade(signalChannel[pntr]+1, dimConst[signalChannel[pntr]+1], 0, startMillis, endMillis);
+       tlc_addFade(signalChannel[pntr]+2, dimConst[signalChannel[pntr]+2], 0, startMillis, endMillis);
+       startMillis = endMillis + darkDelay; 
+       endMillis = startMillis + 1;      
+       tlc_addFade(signalChannel[pntr]+0, 0, dimConst[signalChannel[pntr]+0], startMillis, endMillis);      
+       tlc_addFade(signalChannel[pntr]+2, 0, dimConst[signalChannel[pntr]+2], startMillis, endMillis);
+       break;
     default:
        break;
        }
   Tlc.update();
 }
-
