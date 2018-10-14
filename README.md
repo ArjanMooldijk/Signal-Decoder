@@ -1,5 +1,5 @@
 # Signal-Decoder
-Arduino Sketches for CH Signal decoder
+Arduino Sketches for DCC Signal decoders
 
 Contains two sketches to generate Swiss signals using an Arduino and TLS5940 chip. All controlled with DCC.
 Libraries for TLC and DCC are included in the .zip and can also be downloaded on the web for the moste recent version. 
