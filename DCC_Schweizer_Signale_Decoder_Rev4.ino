@@ -9,7 +9,7 @@
 #include <Tlc5940.h>
 #include <tlc_fades.h>
 
-#define VorAdr1F      1 // Vorsignal addr 1,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
+#define VorAdr1F      1 // Vorsignal addr 1,  Fade    Voorsignaal, eerste adres  beelden Warnung & Fb1
 #define VorAdr2F      2 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres  beelden Fb2 & Fb3
 #define VorAdr3F      3 // Vorsignal addr 3,  Fade    Voorsignaal, derde adres  beeld Fb5
 #define VorAdr2Dkl    4 // Vorsignal addr 2,  Fade    Voorsignaal, tweede adres donker schakelen

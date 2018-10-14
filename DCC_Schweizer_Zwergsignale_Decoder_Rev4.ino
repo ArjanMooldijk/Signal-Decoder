@@ -1,5 +1,5 @@
 // Sketch for Swiss dwarfsignals
-// Version 2.0 (30-10-16)  Arjan Mooldijk
+// Version 2.1 (01-12-17)  Arjan Mooldijk
 // Thanks to Franz-Peter "MicroBahner" (Stummis) for the DCC examples
 // Thanks to Alex Leone for the TLC library
 
@@ -47,7 +47,7 @@ byte signalChannel[16];                     // Eerste pin per het sein
 byte pinCounter = 0;                        // Variable to address the right pin on the TLC5940
 uint32_t startMillis;                       // millisecond variable for fade
 uint32_t endMillis;                         // millisecond variable for fade
-unsigned int LastAddr = 0;                  // last command address
+unsigned int SeqWait = 3*fadeConst+darkDelay+1; // Total time for one sequence to commplete
 uint32_t LastTime[16] = {0};                // will store last time packet received
 byte lastBild[12] = {0};                    // last signal bild for Zwerg
 boolean runSequence = true;                 // Switch to run sequence at startup
@@ -120,7 +120,7 @@ void loop() {
 void notifyDccAccState( uint16_t Addr, uint16_t BoardAddr, uint8_t OutputAddr, uint8_t State ){
   for ( byte index = 0; index < anZahl; index++ ) {
     if (Addr == signalAdr[index]) {                     // ist eigene Adresse
-      if ( LastTime[index] < (millis() - (3*fadeConst+darkDelay+1))) {
+      if ( LastTime[index] < (millis()-SeqWait)) {
         switch (signalType[index]) {
 
 //Zwergsignal Addr 1 Fahrt & Halt Fade
