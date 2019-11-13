@@ -9,3 +9,12 @@ The third sketch is a test program. With this you can enter address and aspect o
 
 Added a sketch for German signals. This one also facilitates the use of multiple daisy chained TLCs. In case of use also alter the variable NUM_TLCS in tlc_config.h.
 I have not been able to test this sketch as I do not have a daisy chained TLC setup available. Use at your own risk and please let me know if something is wrong.
+
+November 2019: 
+-
+Added new constants:
+Vor1AdrF & Vor1AdrnF for Vorsignale with orange and green leds in serie. These can only display Warnung (orange, orange) and Fahrt (green, green). The orange and green lights have one wire/port each.
+
+HbB = Halt bei Bedarf Signal. This is a special signal with two flashing white lights when a train is to stop at a station. It has the same behavior as a SIM Vorsignal.
+
+In the code I created a separate routine for the blinking.
