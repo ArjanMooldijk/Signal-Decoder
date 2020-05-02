@@ -18,3 +18,7 @@ Vor1AdrF & Vor1AdrnF for Vorsignale with orange and green leds in serie. These c
 HbB = Halt bei Bedarf Signal. This is a special signal with two flashing white lights when a train is to stop at a station. It has the same behavior as a SIM Vorsignal.
 
 In the code I created a separate routine for the blinking.
+
+May 2020: 
+-
+Did some maintenance. Replaced the #define by enum's
