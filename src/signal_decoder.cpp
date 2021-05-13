@@ -2,23 +2,23 @@
 // Version 2.8 (01-05-20)  Arjan Mooldijk
 // Thanks to Franz-Peter "MicroBahner" (Stummis) for the DCC examples
 // Thanks to Alex Leone for the TLC library
+
 #include <Arduino.h>
 #include <NmraDcc.h>
 #include <Tlc5940.h>
 #include <tlc_fades.h>
 #include <Settings.h>
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // AAN TE PASSEN CONSTANTEN ///////////////////////////////////////////////////////////////////////////////////////////
 // Decoder nummer. Dit wordt in de decoder zelf opgeslagen en is met de monitor uit te lezen.                       ///
 // Dan weet je welke het is.                                                                                        ///
 const byte decoderNbr = 1;                                                                                          ///
                                                                                                                     ///
-// DCC adressen:                                                                                                    ///
-const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                                     /// just an example
+// DCC adressen:                                                                                       /// Voorbeeld
+const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                                                  ///
                                                                                                                     ///
 // Sein types per hierboven opgegeven adres                                                                         ///
-const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl}; /// just an example
+const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl}; /// Voorbeeld
                                                                                                                     ///
 // Lichtsterkte van de leds per sein in volgorde van de opgegeven types                                             ///
 const int dimConst [16] = {20,20,20,20,20,
