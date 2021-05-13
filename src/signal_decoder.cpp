@@ -1,5 +1,5 @@
-// Sketch voor Zwitserse signalen
-// Version 2.8 (01-05-20)  Arjan Mooldijk
+// Sketch for Swiss Signals
+// Version 3 (01-05-21)  Arjan Mooldijk
 // Thanks to Franz-Peter "MicroBahner" (Stummis) for the DCC examples
 // Thanks to Alex Leone for the TLC library
 
@@ -9,27 +9,28 @@
 #include <tlc_fades.h>
 #include <Settings.h>
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// AAN TE PASSEN CONSTANTEN ///////////////////////////////////////////////////////////////////////////////////////////
-// Decoder nummer. Dit wordt in de decoder zelf opgeslagen en is met de monitor uit te lezen.                       ///
-// Dan weet je welke het is.                                                                                        ///
+// CONSTANTS TO BE ADAPTED  ///////////////////////////////////////////////////////////////////////////////////////////
+// Decoder number. This value is stored in the decoder and displayed on the serial monitor.                         ///
+// Only used for your own administration. Not functional use                                                        ///
 const byte decoderNbr = 1;                                                                                          ///
                                                                                                                     ///
-// DCC adressen:                                                                                       /// Voorbeeld
-const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                                                  ///
+// DCC adresses:                                                                                                    ///
+const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                           /// Values just an Example
                                                                                                                     ///
-// Sein types per hierboven opgegeven adres                                                                         ///
-const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl}; /// Voorbeeld
+// Signal types per in line 18 listed address  (types can be found in /include/Settings.h)                          ///
+const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl}; /// Example
                                                                                                                     ///
-// Lichtsterkte van de leds per sein in volgorde van de opgegeven types                                             ///
+// Brightness per ledper signal as listed above                                                                     ///
 const int dimConst [16] = {20,20,20,20,20,
                            20,20,20,20,
-                           0,0,0,0,0,0,0};       // Lichtsterkte per led (max 16) Iedere rij is één signaal   ///
+                           0,0,0,0,0,0,0};       // Brightness per led (max 16) Every row a signal (just a tip)     ///
                                                                                                                     ///
                                                                                                                     /// 
 const long fadeConst = 150;                 // Fade in/decrease in mSec.                                            ///
 const long darkDelay = 350;                 // Dark phase duration in mSec.                                         ///
 const long interval = 800;                  // interval to blink in mSec.                                           ///
-///////// HIERONDER HOEFT NIETS MEER AANGEPAST TE WORDEN (TENZIJ JE HET PROGRAMMA WILT VERANDEREN ;-) /////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//--------    DO NOT MAKE ANY CHANGES BELOW, UNLESS YOU WANT TO ALTER THE PROGRAM ;-)    ---------------------------///
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const int anZahl = sizeof(signalType);
 unsigned int SeqWait = 3*fadeConst+darkDelay+1; // Total time for one sequence to commplete
@@ -62,8 +63,8 @@ void setup() {
     while (!Serial) {}                      // wait for serial port to connect
     Serial.print("Signal decoder nr ");
     Serial.println(decoderNbr);
-    Serial.println("Software versie 2.9 210424"); 
-    Serial.print("Aantal adressen: ");
+    Serial.println("Software version 3 210501"); 
+    Serial.print("Nbr of adresses: ");
     Serial.println(anZahl);
     Initialiseer_decoder();  
 }
