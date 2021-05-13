@@ -2,10 +2,7 @@
 // Version 2.8 (01-05-20)  Arjan Mooldijk
 // Thanks to Franz-Peter "MicroBahner" (Stummis) for the DCC examples
 // Thanks to Alex Leone for the TLC library
-//
-//Toepassing voor Stadler portaal linker signalen (één 6-licht Hoofdsignaal en een 4-licht Voorsignaal)
-#include<Arduino.h>
-
+#include <Arduino.h>
 #include <NmraDcc.h>
 #include <Tlc5940.h>
 #include <tlc_fades.h>
@@ -18,10 +15,10 @@
 const byte decoderNbr = 1;                                                                                          ///
                                                                                                                     ///
 // DCC adressen:                                                                                                    ///
-const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                                                  ///
+const unsigned int signalAdr[] =   {400, 401, 402, 403, 404, 405};                                     /// just an example
                                                                                                                     ///
 // Sein types per hierboven opgegeven adres                                                                         ///
-const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl};          ///
+const byte signalType[]        =   { HptAdr1F, HptAdr2OGF, HptAdr3OF, VorAdr1F, VorAdr2F, VorAdr3Dkl}; /// just an example
                                                                                                                     ///
 // Lichtsterkte van de leds per sein in volgorde van de opgegeven types                                             ///
 const int dimConst [16] = {20,20,20,20,20,
