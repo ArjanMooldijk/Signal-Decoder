@@ -4,12 +4,13 @@
 // Thanks to Alex Leone for the TLC library
 //
 //Toepassing voor Stadler portaal linker signalen (één 6-licht Hoofdsignaal en een 4-licht Voorsignaal)
+#include<Arduino.h>
 
-#include <Arduino.h>
 #include <NmraDcc.h>
 #include <Tlc5940.h>
 #include <tlc_fades.h>
 #include <Settings.h>
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // AAN TE PASSEN CONSTANTEN ///////////////////////////////////////////////////////////////////////////////////////////
 // Decoder nummer. Dit wordt in de decoder zelf opgeslagen en is met de monitor uit te lezen.                       ///
