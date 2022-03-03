@@ -264,7 +264,7 @@ void HandleCommand (byte index, uint8_t OutputAddr) {
         case FSM:
             LastTime[index] = millis();
             if ( OutputAddr & 0x1 ) {
-                setHilfsignal(index, 1);                         //Hetzelfde als SIM Vorsignal; gebruik dezelfde routines voor aansturing
+                setHilfsignal(index, 2);                         //Hetzelfde als SIM Vorsignal; gebruik dezelfde routines voor aansturing
                 break;
             }
             else {
