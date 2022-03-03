@@ -296,7 +296,7 @@ void HandleCommand (byte index, uint8_t OutputAddr) {
         case HptAdr2OF:
             LastTime[index] = millis();
             LastTime[index-1] = LastTime[index];
-            if (signalType[index+1]== HptAdr3OF || signalType[index+2]== HptAdr3GF || signalType[index+2]== HptAdr3OGF) {
+            if (signalType[index+1]== HptAdr3OF || signalType[index+1]== HptAdr3GF || signalType[index+1]== HptAdr3OGF) {
                 LastTime[index+1] = LastTime[index];
             }
             startMillis = millis() + 1;
@@ -308,7 +308,7 @@ void HandleCommand (byte index, uint8_t OutputAddr) {
         case HptAdr2GF:
             LastTime[index] = millis();
             LastTime[index-1] = LastTime[index];
-            if (signalType[index+1]== HptAdr3OF || signalType[index+2]== HptAdr3GF || signalType[index+2]== HptAdr3OGF) {
+            if (signalType[index+1]== HptAdr3OF || signalType[index+1]== HptAdr3GF || signalType[index+1]== HptAdr3OGF) {
                 LastTime[index+1] = LastTime[index];
             }
             startMillis = millis() + 1;
@@ -320,7 +320,7 @@ void HandleCommand (byte index, uint8_t OutputAddr) {
         case HptAdr2OGF:
             LastTime[index] = millis();
             LastTime[index-1] = LastTime[index];
-            if (signalType[index+1]== HptAdr3OF || signalType[index+2]== HptAdr3GF || signalType[index+2]== HptAdr3OGF) {
+            if (signalType[index+1]== HptAdr3OF || signalType[index+1]== HptAdr3GF || signalType[index+1]== HptAdr3OGF) {
                 LastTime[index+1] = LastTime[index];
             }
             startMillis = millis() + 1;
@@ -338,7 +338,7 @@ void HandleCommand (byte index, uint8_t OutputAddr) {
         case HptAdr2GOF:
             LastTime[index] = millis();
             LastTime[index-1] = LastTime[index];
-            if (signalType[index+1]== HptAdr3OF || signalType[index+2]== HptAdr3GF || signalType[index+2]== HptAdr3OGF) {
+            if (signalType[index+1]== HptAdr3OF || signalType[index+1]== HptAdr3GF || signalType[index+1]== HptAdr3OGF) {
                 LastTime[index+1] = LastTime[index];
             }
             startMillis = millis() + 1;

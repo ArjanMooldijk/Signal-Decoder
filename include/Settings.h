@@ -47,8 +47,8 @@ enum SignalTypes {
 
 byte signalLeds[16];                          // # leds per signal
 byte signalChannel[16];                       // Eerste pin per het sein
-byte Blink [16] = {0};                      // Flag to blink pin (for SIM)
-byte blinkState [16] = {0};                 // Blink on/off
+byte Blink[16] = {0};                      // Flag to blink pin (for SIM)
+byte blinkState[16] = {0};                 // Blink on/off
 unsigned long previousMillis[16]= {0};      // will store last time LED was updated
 byte pinCounter = 0;                            // Variable to address the right pin on the TLC5940
 uint32_t startMillis;                       // millisecond variable for fade
